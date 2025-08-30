@@ -1,0 +1,129 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testing
+/coverage
+.nyc_output
+*.lcov
+
+# Next.js
+/.next/
+/out/
+/build
+
+# Production
+/build
+/dist
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.pem
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# ESLint
+.eslintcache
+
+# Prisma
+prisma/dev.db*
+*.db
+*.sqlite
+
+# Temporary files
+.tmp/
+.temp/
+tmp/
+temp/
+
+# Local development files
+test-connection.js
+*.local.js
+*.dev.js
+
+# Backup files
+*.bak
+*.backup
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Cache directories
+.cache
+.parcel-cache
+.turbo
+.tailwindcss-cache
+
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+
+# Storybook
+.out
+.storybook-out
+
+# Bundle analyzer
+.webpack-bundle-analyzer/
+
+# Size limit
+.size-limit.json
