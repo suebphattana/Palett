@@ -63,7 +63,7 @@ model GeneratedImage {
   prompt           String
   negativePrompt   String?
   model            String
-  imageUrl         String
+  imageUrl         String   // For images, this is image URL; for videos, this is video URL
   thumbnailUrl     String?
   width            Int
   height           Int
@@ -71,9 +71,12 @@ model GeneratedImage {
   steps            Int?
   guidance         Float?
   style            String?
-  operation        String   @default("text-to-image")
-  originalImageUrl String?
-  metadata         Json?
+  operation        String   @default("text-to-image") // text-to-image, text-to-video, image-to-video, image-edit, etc.
+  originalImageUrl String?  // For image-to-image, image-to-video, image-edit operations
+  duration         Int?     // Video duration in seconds (null for images)
+  aspectRatio      String?  // Video aspect ratio (null for images)
+  contentType      String   @default("image") // "image" or "video"
+  metadata         Json?    // Store additional parameters
   isPublic         Boolean  @default(false)
   likes            Int      @default(0)
   createdAt        DateTime @default(now())
@@ -81,6 +84,8 @@ model GeneratedImage {
 
   @@index([userId, createdAt])
   @@index([isPublic, createdAt])
+  @@index([contentType, createdAt])
+  @@index([operation, createdAt])
 }
 
 model Purchase {
